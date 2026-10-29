@@ -1,5 +1,8 @@
 const sections = [...document.querySelectorAll("main .page-section")];
-const navigationLinks = [...document.querySelectorAll(".site-nav a[href^='#']")];
+const navigation = document.querySelector(".site-nav");
+const navigationLinks = [...navigation.querySelectorAll("a[href^='#']")];
+const navActiveIndicator = navigation.querySelector(".nav-active-indicator");
+let currentActiveNavigationLink;
 const photoDialog = document.querySelector(".photo-dialog");
 const photoDialogImage = photoDialog.querySelector(".photo-dialog-image");
 const photoDialogClose = photoDialog.querySelector(".photo-dialog-close");
@@ -21,17 +24,37 @@ photoDialog.addEventListener("click", (event) => {
 
 function updateActiveSection() {
   const activationPoint = Math.min(window.innerHeight * 0.38, 300);
-  const activeSection =
-    sections.find((section) => {
-      const bounds = section.getBoundingClientRect();
-      return bounds.top <= activationPoint && bounds.bottom > activationPoint;
-    }) ?? sections[0];
+  const isAtPageBottom =
+    window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+  const activeSection = isAtPageBottom
+    ? sections[sections.length - 1]
+    : sections.find((section) => {
+        const bounds = section.getBoundingClientRect();
+        return bounds.top <= activationPoint && bounds.bottom > activationPoint;
+      }) ?? sections[0];
+  const activeLink = navigationLinks.find((link) => link.hash === `#${activeSection.id}`);
 
   for (const link of navigationLinks) {
-    if (link.hash === `#${activeSection.id}`) {
+    if (link === activeLink) {
       link.setAttribute("aria-current", "location");
     } else {
       link.removeAttribute("aria-current");
+    }
+  }
+
+  if (!activeLink) return;
+
+  navActiveIndicator.style.width = `${activeLink.offsetWidth}px`;
+  navActiveIndicator.style.transform = `translate3d(${activeLink.offsetLeft}px, -50%, 0)`;
+
+  if (activeLink !== currentActiveNavigationLink) {
+    currentActiveNavigationLink = activeLink;
+    if (navigation.scrollWidth > navigation.clientWidth) {
+      const centeredLeft = activeLink.offsetLeft - (navigation.clientWidth - activeLink.offsetWidth) / 2;
+      navigation.scrollTo({
+        left: Math.max(0, centeredLeft),
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      });
     }
   }
 }

@@ -71,6 +71,7 @@ a {
 }
 
 .site-nav {
+  position: relative;
   display: flex;
   flex: 1;
   height: 66px;
@@ -79,28 +80,35 @@ a {
   gap: clamp(18px, 3.2vw, 48px);
 }
 
+.nav-active-indicator {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 42px;
+  border: 1px solid rgb(89 105 78 / 28%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 27%);
+  box-shadow: 0 2px 9px rgb(34 28 21 / 7%);
+  pointer-events: none;
+  transform: translate3d(0, -50%, 0);
+  transition:
+    width .28s ease,
+    transform .42s cubic-bezier(.22, 1, .36, 1);
+}
+
 .site-nav a {
   position: relative;
+  z-index: 1;
   display: inline-flex;
-  height: 100%;
+  height: 42px;
   align-items: center;
+  padding: 0 12px;
   color: #62665e;
   font-size: 12px;
   font-weight: 500;
   transition: color .2s ease;
-}
-
-.site-nav a::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  background: var(--accent);
-  content: "";
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .2s ease;
 }
 
 .site-nav a:hover,
@@ -108,30 +116,24 @@ a {
   color: var(--ink);
 }
 
-.site-nav a[aria-current="location"]::after {
-  transform: scaleX(1);
-}
-
 .site-nav .nav-book {
   height: auto;
   padding: 12px 17px;
-  border: 1px solid #aeb3a4;
-  border-radius: 2px;
   color: var(--ink);
 }
 
-.site-nav .nav-book::after {
-  display: none;
-}
-
 .site-nav .nav-book:hover {
-  border-color: var(--accent);
-  background: var(--accent);
   color: var(--ink);
 }
 
 .nav-book span {
   margin-left: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-active-indicator {
+    transition: none;
+  }
 }
 
 .page-section {
@@ -745,6 +747,10 @@ h2 em {
 
   .site-nav .nav-book {
     padding: 9px 11px;
+  }
+
+  .nav-active-indicator {
+    height: 38px;
   }
 
   .hero {
