@@ -1,0 +1,12 @@
+{
+  "name": "pitrefied-static-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "live-server --host=0.0.0.0 --port=3000 --no-browser ."
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.4"
+  }
+}

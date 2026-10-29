@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5f0">
+    <meta name="description" content="Welcome to Pitrefied.">
+    <title>Pitrefied — Hair Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#home" aria-current="location">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-book" href="#book">Book online <span aria-hidden="true">↗︎</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero page-section" id="home" aria-labelledby="home-title">
+        <div class="hero-brand">
+          <h1 id="home-title">Pitrefied</h1>
+          <p>Powered by Hairgician</p>
+          <a class="button hero-book" href="#book">Book now</a>
+        </div>
+      </section>
+
+      <section class="about page-section" id="about" aria-labelledby="about-title">
+        <div class="section-label"><span>01</span> A LITTLE ABOUT US</div>
+        <div class="about-content">
+          <p class="eyebrow">YOUR LOCAL, YOUR HAPPY PLACE</p>
+          <h2 id="about-title"><em>Experts </em> you can trust.</h2>
+          <p class="section-copy">Great hair happens when you're in expert hands. Bringing you specialized, personalized hair styling since 2010. We take the time to listen, keep you comfortable, and ensure you leave looking and feeling your absolute best.</p>
+          <p class="about-attribution">Flerida Ruth Pitre, Hair Care Specialist • Est. 2010</p>
+        </div>
+        <div class="about-stamp" aria-hidden="true"><span>MADE FOR<br>YOUR MOMENT</span><b>✳</b></div>
+      </section>
+
+      <section class="services page-section" id="services" aria-labelledby="services-title">
+        <div class="section-label"><span>02</span> WHAT WE DO</div>
+        <div class="services-heading">
+          <div>
+            <p class="eyebrow">OUR SALON MENU</p>
+            <h2 id="services-title">Good hair, <em>your way.</em></h2>
+          </div>
+          <p class="section-copy">From smooth rebonding to dimensional colour, find the service that feels like you. Midlength pricing is noted where it applies.</p>
+        </div>
+        <div class="service-list">
+          <details class="service-group">
+            <summary>
+              <span class="service-category">Rebonding</span>
+              <span class="service-count">3 services</span>
+              <span class="service-toggle" aria-hidden="true"></span>
+            </summary>
+            <button class="service-photo-button" type="button" aria-label="View full-size rebonding photo">
+              <img class="service-photo" src="photos/rebond_with_brazilian.jpg" alt="Long, smooth hair after rebonding" width="1320" height="1320" loading="lazy">
+              <span class="service-photo-hint">Tap photo to enlarge</span>
+            </button>
+            <ul class="service-options">
+              <li><span>Hair rebond with Brazilian <small>Midlength</small></span><span class="service-price">₱3,499</span></li>
+              <li><span>Hair rebond with keracollagen treatment <small>Midlength</small></span><span class="service-price">₱4,999</span></li>
+              <li><span>Hair rebond with keracollagen and Olaplex</span><span class="service-price">₱5,500</span></li>
+            </ul>
+            <a class="service-book" href="#book">Ask about rebonding <span aria-hidden="true">↗</span></a>
+          </details>
+          <details class="service-group">
+            <summary>
+              <span class="service-category">Colour</span>
+              <span class="service-count">5 services</span>
+              <span class="service-toggle" aria-hidden="true"></span>
+            </summary>
+            <button class="service-photo-button" type="button" aria-label="View full-size colour photo">
+              <img class="service-photo" src="photos/rebond_with_balayage_ombre.jpg" alt="Balayage ombré colour on long hair" width="1320" height="1320" loading="lazy">
+              <span class="service-photo-hint">Tap photo to enlarge</span>
+            </button>
+            <ul class="service-options">
+              <li><span>Rebond with highlights and keracollagen treatment</span><span class="service-price">₱6,000</span></li>
+              <li><span>Rebond with balayage and keracollagen treatment</span><span class="service-price">₱8,000</span></li>
+              <li><span>Highlighted keracollagen</span><span class="service-price">₱4,000</span></li>
+              <li><span>Balayage ombré with KERACOLLAPLEX treatment</span><span class="service-price">₱5,000</span></li>
+              <li><span>Basic color Brazilian</span><span class="service-price">₱1,500</span></li>
+            </ul>
+            <a class="service-book" href="#book">Ask about colour <span aria-hidden="true">↗</span></a>
+          </details>
+          <details class="service-group">
+            <summary>
+              <span class="service-category">Treatments</span>
+              <span class="service-count">1 service</span>
+              <span class="service-toggle" aria-hidden="true"></span>
+            </summary>
+            <button class="service-photo-button" type="button" aria-label="View full-size treatments photo">
+              <img class="service-photo" src="photos/brazilian_treatment_.jpg" alt="Smooth hair after a Brazilian treatment" width="1320" height="1320" loading="lazy">
+              <span class="service-photo-hint">Tap photo to enlarge</span>
+            </button>
+            <ul class="service-options">
+              <li><span>Brazilian treatment</span><span class="service-price">₱1,000</span></li>
+            </ul>
+            <a class="service-book" href="#book">Ask about treatments <span aria-hidden="true">↗</span></a>
+          </details>
+        </div>
+      </section>
+
+      <section class="contact page-section" id="contact" aria-labelledby="contact-title">
+        <div class="section-label"><span>03</span> COME ON IN</div>
+        <div class="contact-layout">
+          <div>
+            <p class="eyebrow">WE’D LOVE TO MEET YOU</p>
+            <h2 id="contact-title">Let’s make<br>it <em>happen.</em></h2>
+          </div>
+          <div class="contact-details">
+            <p>Have a question or want to know more? Get in touch and a real person will be happy to help.</p>
+            <div class="contact-item"><span>FIND US</span><p>Your address goes here</p></div>
+            <div class="contact-item"><span>SAY HELLO</span><p>Your phone or email goes here</p></div>
+            <div class="contact-item"><span>WHEN WE’RE HERE</span><p>Add your opening hours here</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking page-section" id="book" aria-labelledby="book-title">
+        <div class="booking-orbit orbit-one"></div>
+        <div class="booking-orbit orbit-two"></div>
+        <p class="eyebrow">YOUR TIME STARTS HERE</p>
+        <h2 id="book-title">Ready when <em>you are.</em></h2>
+        <p>Choose your moment and we’ll take it from there.</p>
+        <a class="button button-light" href="#contact">Get in touch to book <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark" href="#home" aria-label="Pitrefied home">PITREFIED<span>.</span></a>
+      <p>Made with care. See you soon.</p>
+      <a href="#home">Back to top ↑</a>
+    </footer>
+    <dialog class="photo-dialog" aria-label="Full-size service photo">
+      <button class="photo-dialog-close" type="button" aria-label="Close photo preview">×</button>
+      <img class="photo-dialog-image" alt="">
+      <p class="photo-dialog-caption">Reference photo — current prices are listed in the menu.</p>
+    </dialog>
+  </body>
+</html>
