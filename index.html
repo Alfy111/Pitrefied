@@ -25,6 +25,9 @@
     <script src="app.js" defer></script>
   </head>
   <body>
+    <a class="home-brand-bar wordmark" href="#home" aria-label="Pitrefied home">
+      PITREFIED<span>.</span>
+    </a>
     <header class="site-header">
       <nav class="site-nav" aria-label="Main navigation">
         <span class="nav-active-indicator" aria-hidden="true"></span>
@@ -53,7 +56,10 @@
           <p class="section-copy">Great hair happens when you're in expert hands. Bringing you specialized, personalized hair styling since 2010. We take the time to listen, keep you comfortable, and ensure you leave looking and feeling your absolute best.</p>
           <p class="about-attribution">Flerida Ruth Pitre, Hair Care Specialist • Est. 2010</p>
         </div>
-        <div class="about-stamp" aria-hidden="true"><span>MADE FOR<br>YOUR MOMENT</span><b>✳</b></div>
+        <div class="about-stamp" aria-hidden="true">
+          <small><em>Multi awarded hairgician</em></small>
+          <b></b>
+        </div>
       </section>
 
       <section class="services page-section" id="services" aria-labelledby="services-title">
@@ -129,9 +135,9 @@
           </div>
           <div class="contact-details">
             <p>Have a question or want to know more? Get in touch and a real person will be happy to help.</p>
-            <div class="contact-item"><span>FIND US</span><p>Your address goes here</p></div>
-            <div class="contact-item"><span>SAY HELLO</span><p>Your phone or email goes here</p></div>
-            <div class="contact-item"><span>WHEN WE’RE HERE</span><p>Add your opening hours here</p></div>
+            <div class="contact-item"><span>FIND US</span><p>Tondo, Manila</p></div>
+            <div class="contact-item"><span>SAY HELLO</span><p>09053150125</p></div>
+            <div class="contact-item"><span>WHEN WE’RE HERE</span><p>Monday to Sunday, 10am–10pm</p></div>
           </div>
         </div>
       </section>
@@ -142,7 +148,12 @@
         <p class="eyebrow">YOUR TIME STARTS HERE</p>
         <h2 id="book-title">Ready when <em>you are.</em></h2>
         <p>Choose your moment and we’ll take it from there.</p>
-        <a class="button button-light" href="#contact">Get in touch to book <span aria-hidden="true">↗</span></a>
+        <button class="button button-light" type="button" aria-haspopup="dialog" aria-controls="booking-dialog">
+          Get in touch to book
+          <svg class="button-arrow" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+            <path d="M3 13 13 3M5 3h8v8" />
+          </svg>
+        </button>
       </section>
     </main>
 
@@ -155,6 +166,34 @@
       <button class="photo-dialog-close" type="button" aria-label="Close photo preview">×</button>
       <img class="photo-dialog-image" alt="">
       <p class="photo-dialog-caption">Reference photo — current prices are listed in the menu.</p>
+    </dialog>
+    <dialog class="booking-dialog" id="booking-dialog" aria-label="Booking">
+      <button class="booking-dialog-close" type="button" aria-label="Close booking dialog">×</button>
+      <section class="booking-calendar" aria-labelledby="calendar-title">
+        <p class="eyebrow">BOOKING</p>
+        <div class="calendar-heading">
+          <div>
+            <h2 id="calendar-title">Choose a date</h2>
+            <p class="calendar-selection" aria-live="polite">Select a day to get started.</p>
+          </div>
+          <div class="calendar-month-controls" aria-label="Calendar navigation">
+            <button class="calendar-month-button" type="button" data-month-change="-1" aria-label="Previous month">‹</button>
+            <h3 class="calendar-month" aria-live="polite"></h3>
+            <button class="calendar-month-button" type="button" data-month-change="1" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <div class="calendar-grid" role="grid" aria-label="Available booking dates"></div>
+        <p class="booking-fee-note">
+          <strong>Note:</strong> A ₱1,000 booking fee will be added and deducted from your final service bill upon completion of your appointment.
+        </p>
+        <section class="booking-times" aria-labelledby="booking-times-title">
+          <h3 id="booking-times-title">Choose a time</h3>
+          <div class="booking-time-options" aria-label="Available appointment times"></div>
+          <p class="booking-time-selection" aria-live="polite">Select a date to see available times.</p>
+        </section>
+        <button class="booking-continue" type="button" disabled>Continue</button>
+        <p class="booking-continue-status" aria-live="polite"></p>
+      </section>
     </dialog>
   </body>
 </html>

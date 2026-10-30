@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5f0">
+    <meta name="description" content="Review the booking fee and select a payment method for your Pitrefied appointment.">
+    <title>Booking payment — Pitrefied Hair Studio</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="payment.js" defer></script>
+  </head>
+  <body class="booking-page-body">
+    <header class="booking-page-header">
+      <a class="wordmark" href="index.html" aria-label="Pitrefied home">PITREFIED<span>.</span></a>
+      <a class="booking-back-link payment-back-link" href="booking.html">Back to booking details</a>
+    </header>
+    <main class="booking-page">
+      <section class="booking-page-card payment-page-card" aria-labelledby="payment-title">
+        <p class="eyebrow">BOOKING PAYMENT</p>
+        <h1 id="payment-title">Secure your appointment</h1>
+        <p class="booking-page-intro">Review your booking and select how you would like to pay the booking fee.</p>
+        <p class="booking-page-error" role="alert" hidden>
+          Booking details are unavailable in this browser session.
+          <a href="index.html#book">Start again from the calendar</a>.
+        </p>
+        <div class="payment-content">
+          <section class="payment-summary" aria-labelledby="payment-summary-title">
+            <h2 id="payment-summary-title">Appointment summary</h2>
+            <dl>
+              <div><dt>Appointment</dt><dd class="payment-appointment"></dd></div>
+              <div><dt>Client</dt><dd class="payment-client"></dd></div>
+              <div class="payment-amount-row"><dt>Booking fee</dt><dd>₱1,000.00</dd></div>
+            </dl>
+          </section>
+          <fieldset class="payment-methods">
+            <legend>Choose a payment method</legend>
+            <label class="payment-method">
+              <input type="radio" name="paymentMethod" value="gcash">
+              <span class="payment-method-icon payment-method-icon-gcash" aria-hidden="true">
+                <img src="photos/wallet.svg" alt="">
+              </span>
+              <span class="payment-method-copy"><strong>GCash</strong><small>Pay using your GCash wallet</small></span>
+              <span class="payment-method-check" aria-hidden="true"></span>
+            </label>
+            <label class="payment-method">
+              <input type="radio" name="paymentMethod" value="maya">
+              <span class="payment-method-icon payment-method-icon-maya" aria-hidden="true">
+                <img src="photos/wallet-cards.svg" alt="">
+              </span>
+              <span class="payment-method-copy"><strong>Maya</strong><small>Pay using your Maya wallet</small></span>
+              <span class="payment-method-check" aria-hidden="true"></span>
+            </label>
+          </fieldset>
+          <div class="payment-prototype-note" role="status">
+            <strong>Payment setup in progress.</strong>
+            This is a preview only. No payment is being accepted or verified yet. Please do not send money to an account based on this page.
+          </div>
+          <button class="booking-continue payment-submit" type="button" disabled>Payment setup required</button>
+        </div>
+        <p class="booking-fee-note">
+          <strong>Note:</strong> The ₱1,000 booking fee will be deducted from your final service bill upon completion of your appointment.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

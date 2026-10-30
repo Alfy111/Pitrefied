@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5f0">
+    <meta name="description" content="Provide your details for a Pitrefied Hair Studio booking.">
+    <title>Booking details — Pitrefied Hair Studio</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="booking.js" defer></script>
+  </head>
+  <body class="booking-page-body">
+    <header class="booking-page-header">
+      <a class="wordmark" href="index.html" aria-label="Pitrefied home">PITREFIED<span>.</span></a>
+      <a class="booking-back-link" href="index.html#home">Back to salon</a>
+    </header>
+    <main class="booking-page">
+      <section class="booking-page-card" aria-labelledby="booking-page-title">
+        <p class="eyebrow">BOOKING DETAILS</p>
+        <h1 id="booking-page-title">Your appointment</h1>
+        <p class="booking-page-intro">Please share a few details to help us prepare for your visit.</p>
+        <p class="booking-summary" aria-live="polite"></p>
+        <p class="booking-page-error" role="alert" hidden>
+          Your selected appointment date or time is missing or invalid. Please choose another slot.
+          <a href="index.html#book">Return to the calendar</a>.
+        </p>
+        <form class="booking-details-form">
+          <div class="booking-field">
+            <label for="client-name">Name of client <span aria-hidden="true">*</span></label>
+            <input id="client-name" name="clientName" type="text" autocomplete="name" required>
+          </div>
+          <div class="booking-field">
+            <label for="client-phone">Phone # <span aria-hidden="true">*</span></label>
+            <input id="client-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <fieldset class="hair-history">
+            <legend>Hair history</legend>
+            <fieldset class="hair-history-question">
+              <legend>Virgin hair (untouched)</legend>
+              <label><input type="radio" name="virginHair" value="yes"> Yes</label>
+              <label><input type="radio" name="virginHair" value="no"> No</label>
+              <input class="hair-history-note" type="text" name="virginHairNote" aria-label="Leave note for virgin hair" placeholder="Leave note">
+            </fieldset>
+            <fieldset class="hair-history-question">
+              <legend>Colored</legend>
+              <label><input type="radio" name="coloredHair" value="yes"> Yes</label>
+              <label><input type="radio" name="coloredHair" value="no"> No</label>
+              <input class="hair-history-note" type="text" name="coloredHairNote" aria-label="Leave note for colored hair" placeholder="Leave note">
+            </fieldset>
+            <fieldset class="hair-history-question">
+              <legend>Bleached</legend>
+              <label><input type="radio" name="bleachedHair" value="yes"> Yes</label>
+              <label><input type="radio" name="bleachedHair" value="no"> No</label>
+              <input class="hair-history-note" type="text" name="bleachedHairNote" aria-label="Leave note for bleached hair" placeholder="Leave note">
+            </fieldset>
+            <fieldset class="hair-history-question">
+              <legend>Rebonded</legend>
+              <label><input type="radio" name="rebondedHair" value="yes"> Yes</label>
+              <label><input type="radio" name="rebondedHair" value="no"> No</label>
+              <input class="hair-history-note" type="text" name="rebondedHairNote" aria-label="Leave note for rebonded hair" placeholder="Leave note">
+            </fieldset>
+          </fieldset>
+          <button class="booking-continue booking-details-submit" type="submit">Continue</button>
+          <p class="booking-submit-status" aria-live="polite"></p>
+        </form>
+        <p class="booking-fee-note">
+          <strong>Note:</strong> A ₱1,000 booking fee will be added and deducted from your final service bill upon completion of your appointment.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
